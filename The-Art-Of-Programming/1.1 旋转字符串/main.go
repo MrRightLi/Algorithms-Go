@@ -1,6 +1,6 @@
 //1.1 左旋转字符串
 
-package main
+package __1_旋转字符串
 
 import (
 	"fmt"
