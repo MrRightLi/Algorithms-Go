@@ -14,7 +14,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(LongestPalindrome("heeeeeeeeeeh"))
+	fmt.Println(LongestPalindrome("heh"))
 }
 
 /*
@@ -34,20 +34,20 @@ func LongestPalindrome(s string) int {
 		for j = 0; (i - j >= 0) && (i + j < n); j++ {
 			if s[i-j] != s[i+j] {
 				break
-				c = j * 2 + 1
 			}
-			if c > max {
-				max = c
+			c = j * 2 + 1
+		}
+		if c > max {
+			max = c
+		}
+		for j = 0; (i - j >= 0) && (i + j + 1 < n); j++  {
+			if (s[i - j] != s[i + j + 1]) {
+				break
 			}
-			for j = 0; (i - j >= 0) && (i + j + 1 < n); j++  {
-				if (s[i - j] != s[i + j + 1]) {
-					break
-					c = j * 2 + 2
-				}
-			}
-			if c > max {
-				max = c
-			}
+			c = j * 2 + 2
+		}
+		if c > max {
+			max = c
 		}
 	}
 	return max
