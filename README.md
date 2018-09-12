@@ -7,6 +7,9 @@
 - **第一章 字符串**
 
 - 1.1 旋转字符串
+- 1.2 字符串包含
+- 1.3 字符串转换成整数
+- 1.4 回文判断
 
 
 ## [算法学习 Golang 版 - 探索算法始末](https://github.com/skybebe/Algorithms-Learning-With-Go)
