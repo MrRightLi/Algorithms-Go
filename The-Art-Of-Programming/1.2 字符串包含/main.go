@@ -32,8 +32,8 @@ import (
 
 func main() {
 	s1 := "ABCDEFG"
-	s2 := "BCGD"
-	fmt.Println(StringContain3(s1, s2))
+	s2 := "BCKGD"
+	fmt.Println(StringContain4(s1, s2))
 }
 
 // 1. 判断string2中的字符是否在string1中?最直观也是最简单的思路是，针对string2中每一个字符，逐个与string1中每个字符比较，看它是否在String1中。
@@ -88,4 +88,25 @@ func StringContain3(a string, b string) bool {
 		}
 	}
 	return  true
+}
+
+/* 解法4
+
+如果面试官继续追问，还有没有更好的办法呢？计数排序？除了计数排序呢？
+
+事实上，可以先把长字符串a中的所有字符都放入一个Hashtable里，然后轮询短字符串b，看短字符串b的每个字符是否都在Hashtable里，如果都存在，说明长字符串a包含短字符串b，否则，说明不包含。
+
+再进一步，我们可以对字符串A，用位运算（26bit整数表示)计算出一个“签名”，再用B中的字符到A里面进行查找。
+ */
+func StringContain4(a string, b string) bool {
+	hash := 0
+	for i := 0; i < len(a); i++ {
+		hash |= (1 << (a[i] - 'A'))
+	}
+	for i := 0; i < len(b); i++ {
+		if hash & (1 << (b[i] - 'A')) == 0 {
+			return false
+		}
+	}
+	return true
 }
