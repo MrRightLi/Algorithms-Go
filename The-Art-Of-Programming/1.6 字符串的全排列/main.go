@@ -10,7 +10,7 @@ abc、acb、bac、bca、cab 和 cba。
 package main
 
 func main() {
-
+	
 }
 
 /*
@@ -21,7 +21,6 @@ func main() {
 固定b，求后面ac的排列：bac，bca，求好后，c放到第一位置，得到cba
 固定c，求后面ba的排列：cba，cab。
  */
-
 func CalcAllPermutation(str string) []string {
 	var stringRank []string
 	for i := 0; i < len(str); i++ {
