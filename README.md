@@ -10,6 +10,8 @@
 - 1.2 字符串包含
 - 1.3 字符串转换成整数
 - 1.4 回文判断
+- 1.5 最长回文子串
+- 1.6 字符串的全排列
 
 
 ## [算法学习 Golang 版 - 探索算法始末](https://github.com/skybebe/Algorithms-Learning-With-Go)
